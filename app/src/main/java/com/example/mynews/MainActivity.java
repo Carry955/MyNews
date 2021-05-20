@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     if(page == 50){
                         Toast.makeText(getApplicationContext(), "没有更多了", Toast.LENGTH_SHORT);
+                        return;
                     }
                     page++;
                     Call<News> call = request.getCall(page, page_size);
